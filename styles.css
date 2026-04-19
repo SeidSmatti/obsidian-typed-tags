@@ -1,0 +1,115 @@
+/* obsidian-typed-tags — styles loaded by Obsidian when the plugin is enabled. */
+
+.typed-tags-pillified {
+	/* Scoped marker class so users can theme typed-tag rows distinctly if they wish. */
+}
+
+.typed-tags-pill {
+	cursor: pointer;
+}
+
+.typed-tags-pill:hover {
+	filter: brightness(1.1);
+}
+
+.typed-tags-pane {
+	padding: var(--size-2-3) var(--size-2-3);
+	font-size: var(--font-ui-small);
+}
+
+.typed-tags-root {
+	margin-bottom: var(--size-2-2);
+}
+
+.typed-tags-root-header {
+	display: flex;
+	align-items: center;
+	gap: var(--size-2-1);
+	cursor: pointer;
+	padding: var(--size-2-1) 0;
+	user-select: none;
+}
+
+.typed-tags-root.uncategorized .typed-tags-root-label {
+	color: var(--text-muted);
+}
+
+.typed-tags-chevron {
+	width: 1em;
+	text-align: center;
+	color: var(--text-muted);
+}
+
+.typed-tags-root-count {
+	color: var(--text-muted);
+}
+
+.typed-tags-leaves {
+	padding-left: calc(var(--size-2-3) + 1em);
+	display: flex;
+	flex-direction: column;
+}
+
+.typed-tags-leaf {
+	padding: var(--size-2-1) var(--size-2-2);
+	cursor: pointer;
+	border-radius: var(--radius-s);
+}
+
+.typed-tags-leaf:hover {
+	background-color: var(--background-modifier-hover);
+}
+
+.typed-tags-empty {
+	color: var(--text-muted);
+	font-style: italic;
+	padding: var(--size-2-2);
+}
+
+.typed-tags-toolbar {
+	display: flex;
+	justify-content: flex-end;
+	padding-bottom: var(--size-2-2);
+}
+
+.typed-tags-refresh {
+	font-size: var(--font-ui-smaller);
+	padding: var(--size-2-1) var(--size-2-2);
+	cursor: pointer;
+}
+
+.typed-tags-prompt-input {
+	width: 100%;
+	margin-bottom: var(--size-4-3);
+}
+
+.typed-tags-rename-header {
+	font-weight: 600;
+}
+
+.typed-tags-rename-row {
+	margin-bottom: var(--size-2-2);
+}
+
+.typed-tags-rename-path {
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+}
+
+.typed-tags-rename-before {
+	color: var(--text-error);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+}
+
+.typed-tags-rename-after {
+	color: var(--text-success);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+}
+
+.typed-tags-rename-status {
+	color: var(--text-muted);
+	font-style: italic;
+}

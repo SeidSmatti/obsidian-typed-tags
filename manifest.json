@@ -1,0 +1,10 @@
+{
+	"id": "typed-tags",
+	"name": "Typed Tags",
+	"version": "1.0.0",
+	"minAppVersion": "1.12.0",
+	"description": "Declare YAML property keys as tag containers. Flat aesthetic tags stay #clean in prose while being grouped under user-defined categories in the tag pane.",
+	"author": "Seid Smatti",
+	"authorUrl": "https://github.com/SeidSmatti",
+	"isDesktopOnly": false
+}
