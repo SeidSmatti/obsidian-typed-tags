@@ -93,7 +93,7 @@ export class TypedTagsSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName("Show uncategorized bucket")
-			.setDesc("Show an 'Uncategorized' root in the custom tag pane for tags not mapped to any category.")
+			.setDesc("Show a root in the custom tag pane for tags not mapped to any category.")
 			.addToggle((t) =>
 				t.setValue(this.plugin.persisted.settings.showUncategorized).onChange(async (v) => {
 					this.plugin.persisted.settings.showUncategorized = v;

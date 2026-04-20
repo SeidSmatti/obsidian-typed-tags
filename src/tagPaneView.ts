@@ -31,22 +31,24 @@ export class TypedTagsPaneView extends ItemView {
 	}
 
 	getDisplayText(): string {
-		return "Typed Tags";
+		return "Typed tags";
 	}
 
 	getIcon(): string {
 		return "tag";
 	}
 
-	async onOpen(): Promise<void> {
+	onOpen(): Promise<void> {
 		this.disposers.push(this.deps.bus.on("typed-tags:index-updated", () => this.render()));
 		this.disposers.push(this.deps.bus.on("typed-tags:registry-changed", () => this.render()));
 		this.render();
+		return Promise.resolve();
 	}
 
-	async onClose(): Promise<void> {
+	onClose(): Promise<void> {
 		for (const off of this.disposers) off();
 		this.disposers = [];
+		return Promise.resolve();
 	}
 
 	render(): void {
@@ -57,7 +59,7 @@ export class TypedTagsPaneView extends ItemView {
 		const tree = this.buildTree();
 		if (tree.length === 0) {
 			container.createEl("p", {
-				text: "No categories registered yet. Add one in Settings → Typed Tags.",
+				text: "No categories registered yet. Add one in the plugin settings.",
 				cls: "typed-tags-empty",
 			});
 			return;
@@ -67,7 +69,7 @@ export class TypedTagsPaneView extends ItemView {
 
 	private renderToolbar(parent: HTMLElement): void {
 		const bar = parent.createDiv({ cls: "typed-tags-toolbar" });
-		const refresh = bar.createEl("button", { cls: "typed-tags-refresh", text: "↻ Refresh" });
+		const refresh = bar.createEl("button", { cls: "typed-tags-refresh", text: "↻ refresh" });
 		refresh.setAttr("aria-label", "Rebuild typed-tag index");
 		refresh.addEventListener("click", () => {
 			this.deps.rebuildIndex();

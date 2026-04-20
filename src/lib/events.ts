@@ -14,8 +14,9 @@ export class EventBus {
 			set = new Set();
 			this.listeners.set(event, set);
 		}
-		set.add(listener as Listener<keyof EventMap>);
-		return () => set!.delete(listener as Listener<keyof EventMap>);
+		const stored = listener as Listener<keyof EventMap>;
+		set.add(stored);
+		return () => set.delete(stored);
 	}
 
 	emit<K extends keyof EventMap>(event: K, payload: EventMap[K]): void {

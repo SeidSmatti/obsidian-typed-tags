@@ -36,7 +36,7 @@ export class PropertyTypeBinder {
 		const live = new Set(this.registry.list());
 		for (const key of live) {
 			if (!this.originalTypes.has(key)) {
-				const current = (mtm.getAssignedType?.(key) ?? null) as string | null;
+				const current = mtm.getAssignedType?.(key) ?? null;
 				this.originalTypes.set(key, current);
 			}
 			mtm.setType(key, TAGS_TYPE);

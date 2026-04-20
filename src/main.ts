@@ -80,7 +80,9 @@ export default class TypedTagsPlugin extends Plugin {
 
 	onunload(): void {
 		console.debug("[typed-tags] onunload");
-		this.app.workspace.detachLeavesOfType(TYPED_TAGS_VIEW_TYPE);
+		// Don't detach our custom view's leaves here — Obsidian unregisters the view
+		// when the plugin unloads, and detaching would lose the user's chosen pane
+		// location for the next plugin load.
 		this.propertyBinder?.uninstall();
 		this.mirror?.uninstall();
 		this.indexEngine?.dispose();
